@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "replace": "babel-node rnbyx.js",
     "start": "babel-node .",
     "dev": "nodemon --exec npm start"
   },
@@ -12,6 +12,9 @@
   "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
   "license": "MIT",
   "dependencies": {
+    "@babel/generator": "^7.17.3",
+    "@babel/parser": "^7.17.3",
+    "@babel/traverse": "^7.17.3",
     "espree": "2.2.5"
   },
   "devDependencies": {
