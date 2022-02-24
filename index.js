@@ -7,7 +7,7 @@ const traversers = getTraversers()
 
 traverse(ast, {
   Identifier(node) {
-    console.log('\n\n------\nIdentifier', node)
+    //console.log('\n\n------\nIdentifier', node)
     node.name = node.name.split('').reverse().join('')
   },
   FunctionDeclaration(node) {
@@ -21,7 +21,7 @@ console.log('\n\n\n----------\n' + resultingCode)
 
 // function definitions
 function traverse(node, config) {
-  console.log('\n\n--\nnode', node)
+  //console.log('\n\n--\nnode', node)
 
   const visitor = config[node.type] || noop
   visitor(node)
