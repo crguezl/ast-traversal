@@ -12,9 +12,19 @@ const ast = parser.parse(code);
 
 traverse(ast, {
   enter(path) {
-    if (path.isIdentifier({ name: "n" })) {
-      path.node.name = "x";
-    }
+    if (
+        // path.node contains the AST node, 
+        // path.parent is the parent, 
+        // path.key the name of the attribute (left, right, 0, etc.)
+        path.node.type === "Identifier" &&
+        path.node.name === "n"
+      ) {
+        //console.log(Object.keys(path));
+        //console.log(Object.keys(path.scope));
+        //console.log(path.scope.inited);
+
+        path.node.name = "x";
+      }
   },
 });
 
